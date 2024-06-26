@@ -1,0 +1,34 @@
+.setcolor{
+    background: rgb(23,25,30);
+background: linear-gradient(65deg, rgba(23,25,30,1) 0%, rgba(65,31,128,1) 99%);
+}
+/* Assuming Tailwind CSS */
+.message-item {
+    margin-bottom: 1rem;
+    list-style-type: none;
+}
+
+.message-content {
+    max-width: 80%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.sender {
+    background-color: #4caf50; /* Green background for sender's messages */
+    color: white;
+    align-self: flex-end;
+}
+
+.receiver {
+    background-color: #f0f0f0; /* Light gray background for receiver's messages */
+}
+
+.message-text {
+    margin-bottom: 0.2rem;
+}
+
+.message-time {
+    font-size: 0.75rem;
+    color: #666;
+}
