@@ -17,7 +17,7 @@ const useGetConversations = () => {
                     throw new Error("No token found");
                 }
 
-                const res = await fetch("http://localhost:5000/api/users", {
+                const res = await fetch("https://chatapp-0jtv.onrender.com/api/users", {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },

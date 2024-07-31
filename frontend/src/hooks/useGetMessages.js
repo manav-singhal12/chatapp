@@ -19,7 +19,7 @@ const useGetMessages = () => {
             try {
                 const token = localStorage.getItem("token");
                 const response = await fetch(
-                    `http://localhost:5000/api/messages/${selectedConversation._id}`,
+                    `https://chatapp-0jtv.onrender.com/api/messages/${selectedConversation._id}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
