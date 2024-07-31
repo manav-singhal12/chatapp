@@ -6,13 +6,13 @@ import messageRoutes from "./routes/message.route.js";
 import userRoutes from "./routes/user.route.js";
 import cookieParser from "cookie-parser";
 import connectToMongoDB from "./db/connectToMongoDB.js";
-// import cors from "cors";
+import cors from "cors";
 import { app, server } from "./socket/socket.js";
 const PORT = process.env.PORT || 5000;
 const __dirname=path.resolve()
 dotenv.config();
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 app.use(cookieParser());
 
 
