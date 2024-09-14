@@ -1,14 +1,23 @@
 import { Server } from "socket.io";
 import http from "http";
 import express from "express";
+import cors from "cors"; // Import the cors package
 import Conversation from "../models/conversation.model.js";
 import Message from "../models/message.model.js";
 
 const app = express();
+
+// Add CORS middleware
+app.use(cors({
+    origin: ["http://localhost:3000", "https://chatapp-six-self.vercel.app"], // Allow localhost and your Vercel app
+    credentials: true,
+    optionsSuccessStatus: 200,
+}));
+
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: ["https://chatapp-six-self.vercel.app/"], // Replace with your frontend URL
+        origin: ["http://localhost:3000", "https://chatapp-six-self.vercel.app"], // Allow localhost and your Vercel app
         methods: ["GET", "POST"],
         credentials: true,
     },
