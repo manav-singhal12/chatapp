@@ -8,19 +8,16 @@ import Message from "../models/message.model.js";
 const app = express();
 
 // Add CORS middleware
-app.use(cors({
-    origin: ["http://localhost:3000", "https://chatapp-six-self.vercel.app"], // Allow localhost and your Vercel app
-    credentials: true,
-    optionsSuccessStatus: 200,
-}));
-
+// app.use(cors({
+//     origin: ["http://localhost:3000", "https://chatapp-six-self.vercel.app"], // Allow localhost and your Vercel app
+//     methods: ["GET", "POST"],
+//     credentials: true,
+//     optionsSuccessStatus: 200,
+// }));
+app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
-    cors: {
-        origin: ["http://localhost:3000", "https://chatapp-six-self.vercel.app"], // Allow localhost and your Vercel app
-        methods: ["GET", "POST"],
-        credentials: true,
-    },
+    
 });
 
 const userSocketMap = {}; // { userId: socketId }
